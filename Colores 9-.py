@@ -1,0 +1,32 @@
+import cv2
+import numpy as np
+
+celeste=cv2.imread('celeste.jpg')
+celeste1=cv2.cvtColor(celeste,cv2.COLOR_BGR2HSV)
+celeste_bajo=np.array([154,83,48])
+celeste_alto=np.array([234,201,187])
+mask1=cv2.inRange(celeste,celeste_bajo,celeste_alto)
+cv2.imshow('Foto original',celeste)
+cv2.imshow('Foto celeste',mask1)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+marron=cv2.imread('marron.jpg')
+marron1=cv2.cvtColor(marron,cv2.COLOR_BGR2HSV)
+marron_bajo=np.array([0,23,40])
+marron_alto=np.array([125,200,255])
+mask2=cv2.inRange(marron,marron_bajo,marron_alto)
+cv2.imshow('Foto original',marron)
+cv2.imshow('Foto marron',mask2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+rojo=cv2.imread('rojo.jpg')
+rojo1=cv2.cvtColor(rojo,cv2.COLOR_BGR2HSV)
+rojo_bajo=np.array([2,2,100])
+rojo_alto=np.array([160,160,253])
+mask3=cv2.inRange(rojo,rojo_bajo,rojo_alto)
+cv2.imshow('Foto original',rojo)
+cv2.imshow('Foto rojo',mask3)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
